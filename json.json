@@ -1,0 +1,169 @@
+{
+    "university": {
+      "name": "Tech University",
+      "location": "Guadalajara",
+      "students": [
+        {
+          "id": 1,
+          "name": "Alice Johnson",
+          "age": 21,
+          "email": "alice.johnson@techuniversity.edu",
+          "enrollment_status": true,
+          "courses": [
+            { "code": "CS101", "name": "Intro to Computer Science", "grade": 85 },
+            { "code": "MATH201", "name": "Calculus II", "grade": 90 }
+          ],
+          "address": {
+            "street": "123 Elm Street",
+            "city": "Guadalajara",
+            "postal_code": "44100"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Bob Smith",
+          "age": 23,
+          "email": "bob.smith@techuniversity.edu",
+          "enrollment_status": false,
+          "courses": [
+            { "code": "PHYS101", "name": "Physics I", "grade": 78 },
+            { "code": "CHEM101", "name": "General Chemistry", "grade": 88 }
+          ],
+          "address": {
+            "street": "456 Oak Avenue",
+            "city": "Zapopan",
+            "postal_code": "45010"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Charlie Davis",
+          "age": 22,
+          "email": "charlie.davis@techuniversity.edu",
+          "enrollment_status": true,
+          "courses": [
+            { "code": "CS102", "name": "Data Structures", "grade": 92 },
+            { "code": "HIST101", "name": "World History", "grade": 88 }
+          ],
+          "address": {
+            "street": "789 Pine Lane",
+            "city": "Tlaquepaque",
+            "postal_code": "45500"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Diana Clark",
+          "age": 20,
+          "email": "diana.clark@techuniversity.edu",
+          "enrollment_status": true,
+          "courses": [
+            { "code": "BIO101", "name": "Biology I", "grade": 95 },
+            { "code": "CS101", "name": "Intro to Computer Science", "grade": 89 }
+          ],
+          "address": {
+            "street": "101 Maple Blvd",
+            "city": "Guadalajara",
+            "postal_code": "44100"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Evan Foster",
+          "age": 24,
+          "email": "evan.foster@techuniversity.edu",
+          "enrollment_status": false,
+          "courses": [
+            { "code": "PHYS101", "name": "Physics I", "grade": 80 },
+            { "code": "MATH101", "name": "Linear Algebra", "grade": 84 }
+          ],
+          "address": {
+            "street": "202 Birch Road",
+            "city": "Zapopan",
+            "postal_code": "45010"
+          }
+        },
+        {
+          "id": 6,
+          "name": "Fiona Gray",
+          "age": 22,
+          "email": "fiona.gray@techuniversity.edu",
+          "enrollment_status": true,
+          "courses": [
+            { "code": "CS201", "name": "Algorithms", "grade": 93 },
+            { "code": "PHIL101", "name": "Philosophy", "grade": 91 }
+          ],
+          "address": {
+            "street": "303 Cedar Street",
+            "city": "Tlaquepaque",
+            "postal_code": "45500"
+          }
+        },
+        {
+          "id": 7,
+          "name": "George Harris",
+          "age": 25,
+          "email": "george.harris@techuniversity.edu",
+          "enrollment_status": false,
+          "courses": [
+            { "code": "CHEM101", "name": "General Chemistry", "grade": 76 },
+            { "code": "HIST101", "name": "World History", "grade": 82 }
+          ],
+          "address": {
+            "street": "404 Willow Lane",
+            "city": "Guadalajara",
+            "postal_code": "44100"
+          }
+        },
+        {
+          "id": 8,
+          "name": "Helen Ivy",
+          "age": 21,
+          "email": "helen.ivy@techuniversity.edu",
+          "enrollment_status": true,
+          "courses": [
+            { "code": "MATH201", "name": "Calculus II", "grade": 87 },
+            { "code": "BIO101", "name": "Biology I", "grade": 92 }
+          ],
+          "address": {
+            "street": "505 Spruce Way",
+            "city": "Zapopan",
+            "postal_code": "45010"
+          }
+        },
+        {
+          "id": 9,
+          "name": "Ian James",
+          "age": 23,
+          "email": "ian.james@techuniversity.edu",
+          "enrollment_status": false,
+          "courses": [
+            { "code": "CS101", "name": "Intro to Computer Science", "grade": 89 },
+            { "code": "PHYS101", "name": "Physics I", "grade": 77 }
+          ],
+          "address": {
+            "street": "606 Fir Road",
+            "city": "Tlaquepaque",
+            "postal_code": "45500"
+          }
+        },
+        {
+          "id": 10,
+          "name": "Julia Knight",
+          "age": 24,
+          "email": "julia.knight@techuniversity.edu",
+          "enrollment_status": true,
+          "courses": [
+            { "code": "CS102", "name": "Data Structures", "grade": 94 },
+            { "code": "PHIL101", "name": "Philosophy", "grade": 90 }
+          ],
+          "address": {
+            "street": "707 Aspen Blvd",
+            "city": "Guadalajara",
+            "postal_code": "44100"
+          }
+        }
+      ]
+    }
+  }
+  

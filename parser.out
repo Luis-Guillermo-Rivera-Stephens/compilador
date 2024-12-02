@@ -1,0 +1,388 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> json
+Rule 1     json -> object
+Rule 2     json -> array
+Rule 3     object -> L_LLAVE key_value_list R_LLAVE
+Rule 4     object -> L_LLAVE R_LLAVE
+Rule 5     key_value_list -> key_value
+Rule 6     key_value_list -> key_value COMA key_value_list
+Rule 7     key_value -> ATTRIBUTE value
+Rule 8     key_value -> STRING DOS_PUNTOS value
+Rule 9     array -> L_CORCHETE value_list R_CORCHETE
+Rule 10    array -> L_CORCHETE R_CORCHETE
+Rule 11    value_list -> value
+Rule 12    value_list -> value COMA value_list
+Rule 13    value -> object
+Rule 14    value -> array
+Rule 15    value -> STRING
+Rule 16    value -> NUMBER
+Rule 17    value -> BOOLEAN
+Rule 18    value -> NULL
+
+Terminals, with rules where they appear
+
+ATTRIBUTE            : 7
+BOOLEAN              : 17
+COMA                 : 6 12
+DOS_PUNTOS           : 8
+L_CORCHETE           : 9 10
+L_LLAVE              : 3 4
+NULL                 : 18
+NUMBER               : 16
+R_CORCHETE           : 9 10
+R_LLAVE              : 3 4
+STRING               : 8 15
+error                : 
+
+Nonterminals, with rules where they appear
+
+array                : 2 14
+json                 : 0
+key_value            : 5 6
+key_value_list       : 3 6
+object               : 1 13
+value                : 7 8 11 12
+value_list           : 9 12
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . json
+    (1) json -> . object
+    (2) json -> . array
+    (3) object -> . L_LLAVE key_value_list R_LLAVE
+    (4) object -> . L_LLAVE R_LLAVE
+    (9) array -> . L_CORCHETE value_list R_CORCHETE
+    (10) array -> . L_CORCHETE R_CORCHETE
+
+    L_LLAVE         shift and go to state 4
+    L_CORCHETE      shift and go to state 5
+
+    json                           shift and go to state 1
+    object                         shift and go to state 2
+    array                          shift and go to state 3
+
+state 1
+
+    (0) S' -> json .
+
+
+
+state 2
+
+    (1) json -> object .
+
+    $end            reduce using rule 1 (json -> object .)
+
+
+state 3
+
+    (2) json -> array .
+
+    $end            reduce using rule 2 (json -> array .)
+
+
+state 4
+
+    (3) object -> L_LLAVE . key_value_list R_LLAVE
+    (4) object -> L_LLAVE . R_LLAVE
+    (5) key_value_list -> . key_value
+    (6) key_value_list -> . key_value COMA key_value_list
+    (7) key_value -> . ATTRIBUTE value
+    (8) key_value -> . STRING DOS_PUNTOS value
+
+    R_LLAVE         shift and go to state 7
+    ATTRIBUTE       shift and go to state 9
+    STRING          shift and go to state 10
+
+    key_value_list                 shift and go to state 6
+    key_value                      shift and go to state 8
+
+state 5
+
+    (9) array -> L_CORCHETE . value_list R_CORCHETE
+    (10) array -> L_CORCHETE . R_CORCHETE
+    (11) value_list -> . value
+    (12) value_list -> . value COMA value_list
+    (13) value -> . object
+    (14) value -> . array
+    (15) value -> . STRING
+    (16) value -> . NUMBER
+    (17) value -> . BOOLEAN
+    (18) value -> . NULL
+    (3) object -> . L_LLAVE key_value_list R_LLAVE
+    (4) object -> . L_LLAVE R_LLAVE
+    (9) array -> . L_CORCHETE value_list R_CORCHETE
+    (10) array -> . L_CORCHETE R_CORCHETE
+
+    R_CORCHETE      shift and go to state 12
+    STRING          shift and go to state 16
+    NUMBER          shift and go to state 17
+    BOOLEAN         shift and go to state 18
+    NULL            shift and go to state 19
+    L_LLAVE         shift and go to state 4
+    L_CORCHETE      shift and go to state 5
+
+    value_list                     shift and go to state 11
+    value                          shift and go to state 13
+    object                         shift and go to state 14
+    array                          shift and go to state 15
+
+state 6
+
+    (3) object -> L_LLAVE key_value_list . R_LLAVE
+
+    R_LLAVE         shift and go to state 20
+
+
+state 7
+
+    (4) object -> L_LLAVE R_LLAVE .
+
+    $end            reduce using rule 4 (object -> L_LLAVE R_LLAVE .)
+    COMA            reduce using rule 4 (object -> L_LLAVE R_LLAVE .)
+    R_CORCHETE      reduce using rule 4 (object -> L_LLAVE R_LLAVE .)
+    R_LLAVE         reduce using rule 4 (object -> L_LLAVE R_LLAVE .)
+
+
+state 8
+
+    (5) key_value_list -> key_value .
+    (6) key_value_list -> key_value . COMA key_value_list
+
+    R_LLAVE         reduce using rule 5 (key_value_list -> key_value .)
+    COMA            shift and go to state 21
+
+
+state 9
+
+    (7) key_value -> ATTRIBUTE . value
+    (13) value -> . object
+    (14) value -> . array
+    (15) value -> . STRING
+    (16) value -> . NUMBER
+    (17) value -> . BOOLEAN
+    (18) value -> . NULL
+    (3) object -> . L_LLAVE key_value_list R_LLAVE
+    (4) object -> . L_LLAVE R_LLAVE
+    (9) array -> . L_CORCHETE value_list R_CORCHETE
+    (10) array -> . L_CORCHETE R_CORCHETE
+
+    STRING          shift and go to state 16
+    NUMBER          shift and go to state 17
+    BOOLEAN         shift and go to state 18
+    NULL            shift and go to state 19
+    L_LLAVE         shift and go to state 4
+    L_CORCHETE      shift and go to state 5
+
+    value                          shift and go to state 22
+    object                         shift and go to state 14
+    array                          shift and go to state 15
+
+state 10
+
+    (8) key_value -> STRING . DOS_PUNTOS value
+
+    DOS_PUNTOS      shift and go to state 23
+
+
+state 11
+
+    (9) array -> L_CORCHETE value_list . R_CORCHETE
+
+    R_CORCHETE      shift and go to state 24
+
+
+state 12
+
+    (10) array -> L_CORCHETE R_CORCHETE .
+
+    $end            reduce using rule 10 (array -> L_CORCHETE R_CORCHETE .)
+    COMA            reduce using rule 10 (array -> L_CORCHETE R_CORCHETE .)
+    R_CORCHETE      reduce using rule 10 (array -> L_CORCHETE R_CORCHETE .)
+    R_LLAVE         reduce using rule 10 (array -> L_CORCHETE R_CORCHETE .)
+
+
+state 13
+
+    (11) value_list -> value .
+    (12) value_list -> value . COMA value_list
+
+    R_CORCHETE      reduce using rule 11 (value_list -> value .)
+    COMA            shift and go to state 25
+
+
+state 14
+
+    (13) value -> object .
+
+    COMA            reduce using rule 13 (value -> object .)
+    R_CORCHETE      reduce using rule 13 (value -> object .)
+    R_LLAVE         reduce using rule 13 (value -> object .)
+
+
+state 15
+
+    (14) value -> array .
+
+    COMA            reduce using rule 14 (value -> array .)
+    R_CORCHETE      reduce using rule 14 (value -> array .)
+    R_LLAVE         reduce using rule 14 (value -> array .)
+
+
+state 16
+
+    (15) value -> STRING .
+
+    COMA            reduce using rule 15 (value -> STRING .)
+    R_CORCHETE      reduce using rule 15 (value -> STRING .)
+    R_LLAVE         reduce using rule 15 (value -> STRING .)
+
+
+state 17
+
+    (16) value -> NUMBER .
+
+    COMA            reduce using rule 16 (value -> NUMBER .)
+    R_CORCHETE      reduce using rule 16 (value -> NUMBER .)
+    R_LLAVE         reduce using rule 16 (value -> NUMBER .)
+
+
+state 18
+
+    (17) value -> BOOLEAN .
+
+    COMA            reduce using rule 17 (value -> BOOLEAN .)
+    R_CORCHETE      reduce using rule 17 (value -> BOOLEAN .)
+    R_LLAVE         reduce using rule 17 (value -> BOOLEAN .)
+
+
+state 19
+
+    (18) value -> NULL .
+
+    COMA            reduce using rule 18 (value -> NULL .)
+    R_CORCHETE      reduce using rule 18 (value -> NULL .)
+    R_LLAVE         reduce using rule 18 (value -> NULL .)
+
+
+state 20
+
+    (3) object -> L_LLAVE key_value_list R_LLAVE .
+
+    $end            reduce using rule 3 (object -> L_LLAVE key_value_list R_LLAVE .)
+    COMA            reduce using rule 3 (object -> L_LLAVE key_value_list R_LLAVE .)
+    R_CORCHETE      reduce using rule 3 (object -> L_LLAVE key_value_list R_LLAVE .)
+    R_LLAVE         reduce using rule 3 (object -> L_LLAVE key_value_list R_LLAVE .)
+
+
+state 21
+
+    (6) key_value_list -> key_value COMA . key_value_list
+    (5) key_value_list -> . key_value
+    (6) key_value_list -> . key_value COMA key_value_list
+    (7) key_value -> . ATTRIBUTE value
+    (8) key_value -> . STRING DOS_PUNTOS value
+
+    ATTRIBUTE       shift and go to state 9
+    STRING          shift and go to state 10
+
+    key_value                      shift and go to state 8
+    key_value_list                 shift and go to state 26
+
+state 22
+
+    (7) key_value -> ATTRIBUTE value .
+
+    COMA            reduce using rule 7 (key_value -> ATTRIBUTE value .)
+    R_LLAVE         reduce using rule 7 (key_value -> ATTRIBUTE value .)
+
+
+state 23
+
+    (8) key_value -> STRING DOS_PUNTOS . value
+    (13) value -> . object
+    (14) value -> . array
+    (15) value -> . STRING
+    (16) value -> . NUMBER
+    (17) value -> . BOOLEAN
+    (18) value -> . NULL
+    (3) object -> . L_LLAVE key_value_list R_LLAVE
+    (4) object -> . L_LLAVE R_LLAVE
+    (9) array -> . L_CORCHETE value_list R_CORCHETE
+    (10) array -> . L_CORCHETE R_CORCHETE
+
+    STRING          shift and go to state 16
+    NUMBER          shift and go to state 17
+    BOOLEAN         shift and go to state 18
+    NULL            shift and go to state 19
+    L_LLAVE         shift and go to state 4
+    L_CORCHETE      shift and go to state 5
+
+    value                          shift and go to state 27
+    object                         shift and go to state 14
+    array                          shift and go to state 15
+
+state 24
+
+    (9) array -> L_CORCHETE value_list R_CORCHETE .
+
+    $end            reduce using rule 9 (array -> L_CORCHETE value_list R_CORCHETE .)
+    COMA            reduce using rule 9 (array -> L_CORCHETE value_list R_CORCHETE .)
+    R_CORCHETE      reduce using rule 9 (array -> L_CORCHETE value_list R_CORCHETE .)
+    R_LLAVE         reduce using rule 9 (array -> L_CORCHETE value_list R_CORCHETE .)
+
+
+state 25
+
+    (12) value_list -> value COMA . value_list
+    (11) value_list -> . value
+    (12) value_list -> . value COMA value_list
+    (13) value -> . object
+    (14) value -> . array
+    (15) value -> . STRING
+    (16) value -> . NUMBER
+    (17) value -> . BOOLEAN
+    (18) value -> . NULL
+    (3) object -> . L_LLAVE key_value_list R_LLAVE
+    (4) object -> . L_LLAVE R_LLAVE
+    (9) array -> . L_CORCHETE value_list R_CORCHETE
+    (10) array -> . L_CORCHETE R_CORCHETE
+
+    STRING          shift and go to state 16
+    NUMBER          shift and go to state 17
+    BOOLEAN         shift and go to state 18
+    NULL            shift and go to state 19
+    L_LLAVE         shift and go to state 4
+    L_CORCHETE      shift and go to state 5
+
+    value                          shift and go to state 13
+    value_list                     shift and go to state 28
+    object                         shift and go to state 14
+    array                          shift and go to state 15
+
+state 26
+
+    (6) key_value_list -> key_value COMA key_value_list .
+
+    R_LLAVE         reduce using rule 6 (key_value_list -> key_value COMA key_value_list .)
+
+
+state 27
+
+    (8) key_value -> STRING DOS_PUNTOS value .
+
+    COMA            reduce using rule 8 (key_value -> STRING DOS_PUNTOS value .)
+    R_LLAVE         reduce using rule 8 (key_value -> STRING DOS_PUNTOS value .)
+
+
+state 28
+
+    (12) value_list -> value COMA value_list .
+
+    R_CORCHETE      reduce using rule 12 (value_list -> value COMA value_list .)
+
